@@ -5,7 +5,7 @@ import FileManagerPlugin from 'filemanager-webpack-plugin';
 export default {
     devServer: {
         static: {
-            directory: path.join(new URL('.', import.meta.url).pathname, 'dist'),
+            directory: path.join(new URL('.', import.meta.url).pathname, 'public'),
         },
         compress: true,
         port: 9000,

@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="main.js"></script>
+    <script src="stepwise-modal.js"></script>
     <link rel="stylesheet" href="modal-templates.css">
 </head>
 <body>
     <script async>
         document.addEventListener('DOMContentLoaded', () => {
+            const backplate = new Widgets.Modal.Backplate({
+                color: '#ff000088',
+                classNames: ['one', 'two'],
+            });
+
+            const templateRenderer = new Widgets.Modal.TemplateRenderer();
+            const content = templateRenderer.render(
+                Widgets.Modal.SimpleTemplate,
+                {
+                    '-modal-name': 'modal#1',
+                    'title': 'Simple Modal',
+                    'content': 'Hello, World',
+                    'footer-content': (new Date()).toString(),
+                    'not-used': 'nop',
+                }
+            );
+            console.log(content);
+
             const modal = new Widgets.Modal.Modal('modal#1', {
+                backplate: backplate,
                 template: Widgets.Modal.SimpleTemplate,
                 parameters: {
                     'title': '',
@@ -25,8 +44,6 @@
             });
 
             modal.show(); 
-
-            console.log(modal);
         });
     </script>
 

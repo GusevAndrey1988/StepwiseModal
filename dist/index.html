@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="modal-templates.css">
+</head>
+<body>
+    <script async>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = new Widgets.Modal.Modal('modal#1', {
+                template: Widgets.Modal.SimpleTemplate,
+                parameters: {
+                    'title': '',
+                    'footer-content': '',
+                },
+                onShow (modal) {
+                    console.log('show', modal);
+                },
+                onHide (modal) {
+                    console.log('hide', modal);
+                },
+            });
+
+            modal.show(); 
+
+            console.log(modal);
+        });
+    </script>
+
+    <div class="modal-backplate">
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.modal-backplate {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.simple-modal-template {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    min-width: 100px;
+    transform: translate(-50%, -50%);
+    padding: 8px 16px;
+    background-color: #fff;
+}
+
+.simple-modal-template-header {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    justify-content: space-between;
+    border-bottom: 1px dotted #000;
+}
+
+.simple-modal-template-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.simple-modal-template-close-btn {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.simple-modal-template-close-btn span { 
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-right: 2px solid black;
+    transform-origin: 25px 12px;
+}
+
+.simple-modal-template-close-btn span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.simple-modal-template-close-btn span:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.simple-modal-template-content {
+    flex: 1 1;
+}
+
+.simple-modal-template-footer {
+    border-top: 1px dotted #000;
+    margin-top: 5px;
+    padding-top: 5px;
+}

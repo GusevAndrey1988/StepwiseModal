@@ -1,0 +1,1 @@
+(()=>{"use strict";new function(n){this.name="modal#1",console.log(this.name)}("modal#1")})();

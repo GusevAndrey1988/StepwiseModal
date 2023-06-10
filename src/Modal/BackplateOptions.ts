@@ -1,4 +1,4 @@
 export default interface BackplateOptions {
     color?: string;
-    classNames?: string;
+    classNames?: Array<string>;
 }

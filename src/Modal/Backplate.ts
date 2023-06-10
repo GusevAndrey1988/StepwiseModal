@@ -33,8 +33,9 @@ export default class Backplate {
         `;
     }
 
-    public updateContent(newHtml: string): void {
-        this.element.innerHTML = newHtml;
+    public attach(element: HTMLElement) {
+        this.element.innerHTML = '';
+        this.element.append(element);
     }
 
     public show(): void {

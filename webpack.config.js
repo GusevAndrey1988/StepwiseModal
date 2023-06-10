@@ -11,7 +11,7 @@ export default {
     },
     entry: './src/index.ts',
     output: {
-        filename: 'main.js',
+        filename: 'stepwise-modal.js',
         path: path.resolve(new URL('.', import.meta.url).pathname, 'dist'),
     },
     module: {

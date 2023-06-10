@@ -1,5 +1,6 @@
 import path from 'path';
 import { URL } from 'url';
+import FileManagerPlugin from 'filemanager-webpack-plugin';
 
 export default {
     devServer: {
@@ -25,5 +26,17 @@ export default {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js']
-    }
+    },
+    plugins: [
+        new FileManagerPlugin({
+            events: {
+                onEnd: {
+                    copy: [
+                        { source: './dist/*.css', destination: './public' },
+                        { source: './dist/*.js', destination: './public' }
+                    ]
+                }
+            }
+        }),
+    ]
 }

@@ -6,48 +6,21 @@
     <title>Document</title>
     <script src="stepwise-modal.js"></script>
     <link rel="stylesheet" href="modal-templates.css">
+
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script async>
-        document.addEventListener('DOMContentLoaded', () => {
-            const backplate = new Widgets.Modal.Backplate({
-                color: '#ff000088',
-                classNames: ['one', 'two'],
-            });
-
-            const templateRenderer = new Widgets.Modal.TemplateRenderer();
-            const content = templateRenderer.render(
-                Widgets.Modal.SimpleTemplate,
-                {
-                    '-modal-name': 'modal#1',
-                    'title': 'Simple Modal',
-                    'content': 'Hello, World',
-                    'footer-content': (new Date()).toString(),
-                    'not-used': 'nop',
-                }
-            );
-            console.log(content);
-
-            const modal = new Widgets.Modal.Modal('modal#1', {
-                backplate: backplate,
-                template: Widgets.Modal.SimpleTemplate,
-                parameters: {
-                    'title': '',
-                    'footer-content': '',
-                },
-                onShow (modal) {
-                    console.log('show', modal);
-                },
-                onHide (modal) {
-                    console.log('hide', modal);
-                },
-            });
-
-            modal.show(); 
-        });
+    <script type="modal/template">
+        <div><b>Hello, {{userName}}</b></div>
     </script>
 
-    <div class="modal-backplate">
+    <div class="form">
+        <div>
+            <label for="userName">User name:</label>
+            <input id="userName" type="text" name="userName" value="Ivan">
+        </div>
+        <button class="button-submit" data-show-modal>Show</button>
     </div>
 </body>
 </html>

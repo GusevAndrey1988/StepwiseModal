@@ -1,0 +1,19 @@
+.form {
+    max-width: 600px;
+    width: 70%;
+    display: flex;
+    gap: 10px;
+}
+
+.button-submit {
+    width: 100px;
+    background-color: #1f1;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .form {
+        width: 100%;
+    }
+}

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         template: Widgets.Modal.SimpleTemplate,
         renderer: templateRenderer,
         content: new Widgets.Modal.Template(
-            document.querySelector('script[type="modal/template"]').innerHTML
+            document.querySelector('script[type="modal/template"][data-template="single"').innerHTML
         ),
         parameters: modalParameters,
         onShow (modal) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return false;
             }
 
-            modal.changeParameters({ ...modalParameters, userName });
+            modal.combineParameters({ userName });
             return true;
         },
         onHide (modal) {

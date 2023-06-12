@@ -16,7 +16,7 @@ window.Widgets.Modal.Modal = Modal;
 window.Widgets.Modal.StepwiseModal = StepwiseModal;
 
 window.Widgets.Modal.SimpleTemplate = new Template(`
-    <div class="simple-modal-template" modal-name="{{-modal-name}}">
+    <div class="simple-modal-template">
         <div class="simple-modal-template-header">
             <div class="simple-modal-template-title">{{title}}</div>
             <div class="simple-modal-template-close-btn" data-modal-close="">

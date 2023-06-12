@@ -89,4 +89,10 @@ export default class Modal implements Visible {
         this.setupCommonParameters();
         this.modified = true;
     }
+
+    public combineParameters(parameters: any): any {
+        this.options.parameters = { ...this.options.parameters, ...parameters };
+        this.setupCommonParameters();
+        this.modified = true;
+    }
 }

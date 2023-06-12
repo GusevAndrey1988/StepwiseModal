@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    let modal = null;
+
     const backplate = new Widgets.Modal.Backplate({
         color: '#33330088',
         classNames: ['one', 'two'],
+        onClick: (backplate, event) => {
+            if (!modal || !event.target.classList.contains('one')) {
+                return;
+            }
+
+            modal.hide();
+        },
     });
 
     const templateRenderer = new Widgets.Modal.TemplateRenderer();
@@ -12,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'userName': 'Ivan',
     };
 
-    const modal = new Widgets.Modal.Modal('modal#1', {
+    modal = new Widgets.Modal.Modal('modal#1', {
         backplate: backplate,
         template: Widgets.Modal.SimpleTemplate,
         renderer: templateRenderer,

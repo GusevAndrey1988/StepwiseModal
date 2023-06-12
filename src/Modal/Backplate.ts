@@ -5,9 +5,13 @@ export default class Backplate {
 
     constructor(private options: BackplateOptions = {}) {
         this.prepareOptions();
+        
         this.element = document.createElement('div');
         this.element.classList.add(...this.options.classNames);
+
         this.setBackplateStyles(this.element);
+        this.bindEventHandlers();
+
         document.body.append(this.element);
     }
 
@@ -19,6 +23,8 @@ export default class Backplate {
         if (!this.options.classNames) {
             this.options.classNames = ['modals-backplate'];
         }
+
+        this.options.onClick = this.options.onClick || (() => {});
     }
 
     private setBackplateStyles(element: HTMLElement) {
@@ -31,6 +37,12 @@ export default class Backplate {
             display: none;
             background-color: ${this.options.color};
         `;
+    }
+
+    private bindEventHandlers(): void {
+        this.element.addEventListener('click', ((event: Event) => {
+            this.options.onClick(this, event);
+        }).bind(this));
     }
 
     public attach(element: HTMLElement) {

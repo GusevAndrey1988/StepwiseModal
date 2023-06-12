@@ -1,6 +1,7 @@
+import Visible from "../Common/Visible";
 import ModalOptions from "./ModalOptions";
 
-export default class Modal {
+export default class Modal implements Visible {
     public static readonly CLOSE_BUTTON_SELECTOR = '[data-modal-close]';
 
     private modified: boolean = true;

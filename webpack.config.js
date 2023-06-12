@@ -10,6 +10,7 @@ export default {
         compress: true,
         port: 9000,
     },
+    target: ['web', 'es2015'],
     entry: './src/index.ts',
     output: {
         filename: 'stepwise-modal.js',

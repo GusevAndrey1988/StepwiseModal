@@ -32,6 +32,15 @@
     justify-content: space-between;
 }
 
+.home-link {
+    margin-top: 20px;    
+}
+
+.home-link::before {
+    content: "<-";
+    margin-right: 5px;
+}
+
 @media (max-width: 600px) {
     .form {
         width: 100%;

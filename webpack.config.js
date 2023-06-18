@@ -11,9 +11,15 @@ export default {
         port: 9000,
     },
     target: ['web', 'es2015'],
-    entry: './src/index.ts',
+    entry: {
+        singleModal: './src/singleModal.ts',
+        stepwiseModal: {
+            dependOn: 'singleModal',
+            import: './src/stepwiseModal.ts'
+        }
+    },
     output: {
-        filename: 'stepwise-modal.js',
+        filename: '[name].js',
         path: path.resolve(new URL('.', import.meta.url).pathname, 'dist'),
     },
     module: {

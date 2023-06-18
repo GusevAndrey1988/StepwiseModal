@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="singleModal.js"></script>
+    <script src="stepwiseModal.js"></script>
+    <link rel="stylesheet" href="modal-templates.css">
+
+    <script src="appStepwiseModal.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Modal Test</h1>
+    
+    <h2>Stepwise Modal</h2>
+    <button class="button-submit" data-start-stepwise="true">Begin</button>
+    <div data-result-output=""></div>
+
+    <!-- Modal template -->
+    <script type="modal/template" data-template="stepwise-template">
+        <div class="simple-modal-template" modal-name="{{-modal-name}}" data-stepwise="true">
+            <div class="simple-modal-template-header">
+                <div class="simple-modal-template-title">{{title}}</div>
+                <div class="simple-modal-template-close-btn" data-modal-close="">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="simple-modal-template-content">
+                <div class="error">{{error-message}}</div>
+                {{content}}
+            </div>
+            <div class="simple-modal-template-footer custom">
+                <button class="button-submit" data-next-for="stepwiseModal#1" data-user-object="back">Назад</button>
+                <button class="button-submit" data-next-for="stepwiseModal#1">Далее</button>
+            </div>
+        </div>
+    </script>
+
+    <script type="modal/template" data-template="user-name">
+        <div>
+            <label for="userName#stepwise">Имя:</label>
+            <input id="userName#stepwise" type="text" name="userName" value="{{userName}}">
+        </div>
+    </script>
+
+    <script type="modal/template" data-template="product">
+        <div>
+            <label for="product#stepwise">Выберите продукт:</label>
+            <select id="product#stepwise" name="productId">
+                <option value="1" selected>Product #1</option>
+                <option value="2">Product #2</option>
+                <option value="3">Product #3</option>
+            </select>
+        </div>
+    </script>
+
+    <script type="modal/template" data-template="date">
+        <div>
+            <label for="date#stepwise">Дата:</label>
+            <input id="date#stepwise" type="date" name="date" value={{date}}>
+        </div>
+    </script>
+</body>
+</html>
